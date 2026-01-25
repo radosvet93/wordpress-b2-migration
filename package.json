@@ -1,0 +1,19 @@
+{
+  "name": "wordpress-b2-migration",
+  "version": "1.0.0",
+  "description": "A bunch of scripts to help migrate images from a WordPress site to Backblaze B2. First, download all images from the WordPress site to local storage, then upload them to B2.",
+  "main": "index.js",
+  "scripts": {
+    "download-images": "node wp/index.js",
+    "upload-images": "node b2/upload-images.js"
+  },
+  "keywords": ["wordpress", "backblaze", "b2", "migration", "images"],
+  "author": "Radosvet Petrov",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.975.0",
+    "dotenv": "^17.2.3",
+    "mime-types": "^3.0.2"
+  }
+}
