@@ -7,7 +7,7 @@ import {
 } from "@aws-sdk/client-s3";
 import 'dotenv/config'
 
-const LOCAL_ROOT = "tmp/wp-images";
+const LOCAL_ROOT = "portfolio";
 const BUCKET = process.env.B2_BUCKET_NAME;
 
 if (!BUCKET) {
@@ -40,7 +40,7 @@ async function walk(dir) {
 }
 
 async function uploadFile(filePath) {
-  const key = path
+  const key = "portfolio/" + path
     .relative(LOCAL_ROOT, filePath)
     .replace(/\\/g, "/"); // Windows safety
 
